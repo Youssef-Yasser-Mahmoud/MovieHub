@@ -1,8 +1,8 @@
+import MoviesList from "../components/MoviesList"
+
 function Movies() {
   return (
-    <div>
-      MOVIES
-    </div>
+    <MoviesList/>
   )
 }
 
