@@ -5,6 +5,7 @@ import NotFound from './pages/NotFound';
 import NavBar from './components/NavBar';
 import Login from './pages/Login';
 import Movies from './pages/Movies';
+import MovieItemDetails from './pages/MovieItemDetails';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='about' element={<About />} />
           <Route path='login' element={<Login />} />
           <Route path='movies' element={<Movies />} />
+          <Route path='movies/:id' element={<MovieItemDetails />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
