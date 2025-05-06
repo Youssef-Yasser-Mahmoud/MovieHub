@@ -6,9 +6,16 @@ MovieHub is a modern, responsive React application that allows users to browse a
 
 ## 📸 Preview
 
-![screenshot](public/localhost_5173_home.png)  
-![screenshot](public/localhost_5173_aboutus.png)  
-![screenshot](public/localhost_5173_movies.png)  
+`Home`
+![screenshot](public/localhost_5173_home.png)
+
+`About`
+![screenshot](public/localhost_5173_aboutus.png)
+
+`Movies`
+![screenshot](public/localhost_5173_movies.png)
+
+`Login`
 ![screenshot](public/localhost_5173_login.png)
 
 ## Features
