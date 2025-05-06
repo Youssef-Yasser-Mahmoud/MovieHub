@@ -1,0 +1,187 @@
+/* NavBar styling */
+:root {
+  --primary-color: #032541;
+  --secondary-color: #01b4e4;
+  --text-color: #ffffff;
+  --hover-color: #ff9e00;
+  --active-color: #ff9e00; /* Color for active links */
+  --transition-speed: 0.3s;
+}
+
+/* Main navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo container */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo image */
+.logo-container img {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+/* Navigation menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation list */
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation items */
+.nav-menu li {
+  margin: 0 15px;
+  padding: 8px 0;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Link styling */
+.nav-menu li a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
+  display: block;
+}
+
+.nav-menu li a:hover {
+  color: var(--hover-color);
+}
+
+/* Active link styling */
+.nav-menu li a.active {
+  color: var(--active-color);
+  font-weight: 700;
+}
+
+/* Add a permanent underline for active links */
+.nav-menu li a.active::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--active-color);
+}
+
+/* Underline effect on hover */
+.nav-menu li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--hover-color);
+  transition: width var(--transition-speed) ease;
+}
+
+.nav-menu li:hover::after {
+  width: 100%;
+}
+
+/* Don't show hover underline if link is already active */
+.nav-menu li:has(a.active)::after {
+  display: none;
+}
+
+/* Mobile menu button (hidden by default) */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 70%;
+    height: calc(100vh - 70px);
+    background-color: var(--primary-color);
+    flex-direction: column;
+    transition: right var(--transition-speed) ease;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-menu.active {
+    right: 0;
+  }
+  
+  .nav-menu ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem 0;
+  }
+  
+  .nav-menu li {
+    margin: 15px 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .nav-menu li::after,
+  .nav-menu li a.active::after {
+    display: none;
+  }
+  
+  /* Alternative active styling for mobile */
+  .nav-menu li a.active {
+    background-color: rgba(255, 158, 0, 0.2);
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  /* Make links fill the entire li for better touch targets on mobile */
+  .nav-menu li a {
+    padding: 10px 0;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .logo-container img {
+    height: 30px;
+  }
+  
+  .navbar {
+    padding: 0.8rem;
+  }
+}
