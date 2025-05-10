@@ -4,19 +4,14 @@
 
 MovieHub is a modern, responsive React application that allows users to browse and explore movies from around the world. Built with React and Vite, this application provides a seamless user experience with fast loading times and a clean, intuitive interface.
 
+## Live Demo
+
+👉 https://movie-hub-seven-delta.vercel.app/
+
 ## 📸 Preview
-
-`Home`
-![screenshot](public/localhost_5173_home.png)
-
-`About`
-![screenshot](public/localhost_5173_aboutus.png)
 
 `Movies`
 ![screenshot](public/localhost_5173_movies.png)
-
-`Login`
-![screenshot](public/localhost_5173_login.png)
 
 ## Features
 
