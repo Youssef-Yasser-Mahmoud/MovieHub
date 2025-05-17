@@ -1,20 +1,24 @@
 .movie-card {
   background-color: var(--card-background);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .movie-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   border-color: var(--secondary-color);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .movie-poster {
@@ -83,12 +87,12 @@
   .movie-title {
     font-size: 1rem;
   }
-  
+
   .movie-overview {
     font-size: 0.8rem;
     -webkit-line-clamp: 2;
   }
-  
+
   .movie-info {
     padding: 10px;
   }

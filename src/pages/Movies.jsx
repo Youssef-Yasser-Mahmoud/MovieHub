@@ -1,9 +1,7 @@
-import MoviesList from "../components/MoviesList"
+import MoviesList from '../components/MoviesList';
 
 function Movies() {
-  return (
-    <MoviesList/>
-  )
+  return <MoviesList />;
 }
 
-export default Movies
+export default Movies;

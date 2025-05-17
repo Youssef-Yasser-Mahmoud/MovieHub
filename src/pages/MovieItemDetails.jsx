@@ -1,4 +1,4 @@
-import { useParams } from 'react-router';
+import { useParams, useNavigate } from 'react-router';
 import { useState, useEffect } from 'react';
 import useFetch from '../utils/useFetch';
 import Spinner from '../components/Spinner';
@@ -11,9 +11,14 @@ const apiUrl = url + path + apiKey;
 
 function MovieItemDetails() {
   let { id } = useParams();
+  const navigate = useNavigate();
   const [moviesList, isLoading] = useFetch(apiUrl);
   const [genres, setGenres] = useState([]);
   const movieItem = moviesList.find((obj) => obj.id == id);
+
+  const handleBack = () => {
+    navigate(-1);
+  };
 
   useEffect(() => {
     if (movieItem) {
@@ -55,6 +60,9 @@ function MovieItemDetails() {
 
   return (
     <div className='movie-details-container'>
+      <button className='back-button' onClick={handleBack}>
+        ← Back to Movies
+      </button>
       <div
         className='movie-details-backdrop'
         style={{ backgroundImage: `url(https://image.tmdb.org/t/p/original${movieItem.backdrop_path})` }}
@@ -116,4 +124,3 @@ function MovieItemDetails() {
 }
 
 export default MovieItemDetails;
-
